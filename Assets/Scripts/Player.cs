@@ -49,6 +49,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene("ClearScene");
+        if (collision.name == "flag")
+        {
+            SceneManager.LoadScene("ClearScene");
+        }
     }
 }
