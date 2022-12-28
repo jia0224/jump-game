@@ -9,9 +9,12 @@ public class GameManager : MonoBehaviour
     public GameObject Arrow;
     public GameObject Hp;
     public int hp = 10;
+    public Text Score;
+    public int score = 0;
     void Start()
     {
         InvokeRepeating("ArrowShot", 0, 1.0f);
+        Score.text = "分數:" + score ;
     }
 
     // Update is called once per frame
@@ -31,5 +34,10 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
         }
+    }
+    public void addScore()
+    {
+        score += 10;
+        Score.text = "分數:" + score;
     }
 }

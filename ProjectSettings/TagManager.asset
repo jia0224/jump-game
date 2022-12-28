@@ -6,6 +6,8 @@ TagManager:
   tags:
   - cat
   - flag
+  - arrow
+  - addScore
   layers:
   - Default
   - TransparentFX

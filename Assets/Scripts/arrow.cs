@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class arrow : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GameObject GameManager;
     void Start()
     {
+        GameManager = GameObject.Find("GameManager");
         Destroy(gameObject, 3f);
     }
 
@@ -21,5 +22,11 @@ public class arrow : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.name == "addScore")
+        {
+            Destroy(gameObject);
+            GameManager.GetComponent<GameManager>().addScore();
+        }
+
     }
 }
